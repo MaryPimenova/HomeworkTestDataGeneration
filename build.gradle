@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.maruspim'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            "com.codeborne:selenide:6.12.4",
+            "org.junit.jupiter:junit-jupiter:5.9.2"
+    )
+    testImplementation 'org.jetbrains:annotations:23.0.0'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()  // для подключения JUnit5
+}
