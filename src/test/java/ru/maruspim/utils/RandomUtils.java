@@ -5,11 +5,11 @@ import java.text.SimpleDateFormat;
 
 // Class for fake data generating
 public class RandomUtils {
-        static Faker faker = new Faker(new Locale("en-IND"));
-        static SimpleDateFormat sdf = new SimpleDateFormat("yyy MMMM dd", Locale.ENGLISH);
-        static String str = sdf.format(faker.date().birthday()); //generating of birthday date
-        static String[] splitDate = str.split(" "); //splitting into year? month and day
-        static String[]
+        Faker faker = new Faker(new Locale("en-IND"));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyy MMMM dd", Locale.ENGLISH);
+        String str = sdf.format(faker.date().birthday()); //generating of birthday date
+        String[] splitDate = str.split(" "); //splitting into year? month and day
+        String[]
                 gendersChoice = {"Male", "Female", "Other"},
                 subjectsChoice = {"Hindi", "English", "Maths", "Physics", "Chemistry", "Biology", "Computer Science", "Commerce", "Accounting", "Economics", "Arts", "Social Studies", "History", "Civics"},
                 hobbiesChoice = {"Sports", "Reading", "Music"},
@@ -20,55 +20,55 @@ public class RandomUtils {
                 citiesOfRajasthan = {"Jaipur", "Jaiselmer"};
 
 
-        public static String createRandomFirstName() {
+        public String createRandomFirstName() {
 
             return faker.name().firstName();
         }
-        public static String createRandomLastName() {
+        public String createRandomLastName() {
 
             return faker.name().lastName();
         }
-        public static String createRandomEmail() {
+        public String createRandomEmail() {
 
             return faker.internet().emailAddress();
         }
-        public static String createRandomGender() {
+        public String createRandomGender() {
 
             return faker.options().option(gendersChoice);
         }
-        public static String createRandomMobileNumber() {
+        public String createRandomMobileNumber() {
 
             return faker.phoneNumber().subscriberNumber(10);
         }
-        public static String createRandomYear() {
+        public String createRandomYear() {
 
             return splitDate[0];
         }
-        public static String createRandomMonth() {
+        public String createRandomMonth() {
 
             return splitDate[1];
         }
-        public static String createRandomDay() {
+        public String createRandomDay() {
 
             return splitDate[2];
         }
-        public static String createRandomSubject() {
+        public String createRandomSubject() {
 
             return faker.options().option(subjectsChoice);
         }
-        public static String createRandomHobby() {
+        public String createRandomHobby() {
 
             return faker.options().option(hobbiesChoice);
         }
-        public static String createRandomCurrentAddress() {
+        public String createRandomCurrentAddress() {
 
             return faker.address().fullAddress();
         }
-        public static String createRandomState() {
+        public String createRandomState() {
 
             return faker.options().option(statesChoice);
         }
-        public static String createRandomCity(String state) {
+        public String createRandomCity(String state) {
             switch (state) {
                 case "NCR": {
                     return faker.options().option(citiesOfNCR);
@@ -86,18 +86,4 @@ public class RandomUtils {
             return null;
         }
 
- public static String
-         firstName = createRandomFirstName(),
-         lastName = createRandomLastName(),
-         userEmail = createRandomEmail(),
-         gender = createRandomGender(),
-         mobileNumber = createRandomMobileNumber(),
-         year = createRandomYear(),
-         month = createRandomMonth(),
-         day = createRandomDay(),
-         subject = createRandomSubject(),
-         hobby = createRandomHobby(),
-         currentAddress = createRandomCurrentAddress(),
-         state = createRandomState(),
-         city = createRandomCity(state);
 }

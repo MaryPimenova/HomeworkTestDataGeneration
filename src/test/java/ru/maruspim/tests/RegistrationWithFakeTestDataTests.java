@@ -1,10 +1,26 @@
 package ru.maruspim.tests;
 import org.junit.jupiter.api.Test;
-import static ru.maruspim.utils.RandomUtils.*;
+import ru.maruspim.utils.RandomUtils;
+
 public class RegistrationWithFakeTestDataTests extends TestBase {
 
     @Test
     void successfulFillFormTest() {
+        RandomUtils randomUtils = new RandomUtils();
+        String
+                firstName = randomUtils.createRandomFirstName(),
+                lastName = randomUtils.createRandomLastName(),
+                userEmail = randomUtils.createRandomEmail(),
+                gender = randomUtils.createRandomGender(),
+                mobileNumber = randomUtils.createRandomMobileNumber(),
+                year = randomUtils.createRandomYear(),
+                month = randomUtils.createRandomMonth(),
+                day = randomUtils.createRandomDay(),
+                subject = randomUtils.createRandomSubject(),
+                hobby = randomUtils.createRandomHobby(),
+                currentAddress = randomUtils.createRandomCurrentAddress(),
+                state = randomUtils.createRandomState(),
+                city = randomUtils.createRandomCity(state);
 
         registrationPageComponent.openPage("/automation-practice-form")
                 .footerRemoving()
