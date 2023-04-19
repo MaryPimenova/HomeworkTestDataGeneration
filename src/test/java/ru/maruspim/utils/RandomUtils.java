@@ -17,8 +17,8 @@ public class RandomUtils {
                 citiesOfNCR = {"Delhi", "Gurgaon", "Noida"},
                 citiesOfUttarPradesh = {"Agra", "Lucknow", "Merrut"},
                 citiesOfHaryana = {"Karnal", "Panipat"},
-                citiesOfRajasthan = {"Jaipur", "Jaiselmer"},
-                months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+                citiesOfRajasthan = {"Jaipur", "Jaiselmer"};
+
 
         public static String createRandomFirstName() {
 
