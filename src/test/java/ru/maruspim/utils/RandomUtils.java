@@ -40,7 +40,6 @@ public class RandomUtils {
 
             return faker.phoneNumber().subscriberNumber(10);
         }
-
         public static String createRandomYear() {
 
             return splitDate[0];
