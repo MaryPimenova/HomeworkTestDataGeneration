@@ -11,10 +11,11 @@ repositories {
 
 dependencies {
     testImplementation (
+            "com.github.javafaker:javafaker:1.0.2",
             "com.codeborne:selenide:6.12.4",
-            "org.junit.jupiter:junit-jupiter:5.9.2"
+            "org.junit.jupiter:junit-jupiter:5.9.2",
+            "org.jetbrains:annotations:23.0.0"
     )
-    testImplementation 'org.jetbrains:annotations:23.0.0'
 }
 
 tasks.withType(JavaCompile) {

@@ -4,9 +4,8 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import ru.maruspim.pages.RegistrationPage;
 import ru.maruspim.pages.TextBoxPage;
-import ru.maruspim.pages.components.CalendarComponent;
 
-public class FormTestBase {
+public class TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     TextBoxPage textBoxPage = new TextBoxPage();
     @BeforeAll

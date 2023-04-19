@@ -1,7 +1,7 @@
 package ru.maruspim.tests;
 
 import org.junit.jupiter.api.Test;
-public class TextBoxTests extends FormTestBase {
+public class TextBoxTests extends TestBase {
 
     @Test
     void successfulFillFormTest() {
