@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
-public class RegistrationPage {
+public class RegistrationPageComponent {
     // Selenide elements / locator / etc
     CalendarComponent calendarComponent = new CalendarComponent();
     ResultsModal resultsModal = new ResultsModal();
@@ -30,76 +30,76 @@ public class RegistrationPage {
 
 
     // Actions
-    public RegistrationPage openPage(String pageUrl) {
+    public RegistrationPageComponent openPage(String pageUrl) {
         open(pageUrl);
         formHeaderText.shouldHave(text("Student Registration Form"));
 
         return this;
     }
-    public RegistrationPage footerRemoving () {
+    public RegistrationPageComponent footerRemoving () {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
         return this;
     }
-    public RegistrationPage setFirstName(String value) {
+    public RegistrationPageComponent setFirstName(String value) {
         firstNameInput.setValue(value);
 
         return this;
     }
-    public RegistrationPage setLastName(String value) {
+    public RegistrationPageComponent setLastName(String value) {
         lastNameInput.setValue(value);
 
         return this;
     }
-    public RegistrationPage setUserEmail(String value) {
+    public RegistrationPageComponent setUserEmail(String value) {
         userEmailInput.setValue(value);
 
         return this;
     }
-    public RegistrationPage setGenderWrapper(String value) {
+    public RegistrationPageComponent setGenderWrapper(String value) {
         gendersWrapper.$(byText(value)).click();
 
         return this;
     }
-    public RegistrationPage setMobileNumber(String value) {
+    public RegistrationPageComponent setMobileNumber(String value) {
         mobileNumberInput.setValue(value);
 
         return this;
     }
-    public RegistrationPage setDate(String day, String month, String year) {
+    public RegistrationPageComponent setDate(String day, String month, String year) {
         dateOfBirthInput.click();
         calendarComponent.setDate(day, month, year);
 
         return this;
     }
-    public RegistrationPage setSubjects(String value) {
+    public RegistrationPageComponent setSubjects(String value) {
         subjectsInput.setValue(value).pressEnter();
 
         return this;
     }
-    public RegistrationPage setHobby(String value) {
+    public RegistrationPageComponent setHobby(String value) {
         hobbiesWrapper.$(byText(value)).click();
 
         return this;
     }
-    public RegistrationPage uploadPicture(String value) {
+    public RegistrationPageComponent uploadPicture(String value) {
         pictureUpload.uploadFromClasspath(value);
 
         return this;
     }
-    public RegistrationPage setCurrentAddress(String value) {
+    public RegistrationPageComponent setCurrentAddress(String value) {
        currentAddressInput.setValue(value);
 
         return this;
     }
-    public RegistrationPage setState(String value) {
+    public RegistrationPageComponent setState(String value) {
         state.click();
         stateAndCityChoice.$(byText(value)).click();
 
         return this;
     }
-    public RegistrationPage setCity(String value) {
+    public RegistrationPageComponent setCity(String value) {
         city.click();
         stateAndCityChoice.$(byText(value)).click();
 
@@ -109,13 +109,13 @@ public class RegistrationPage {
         submitButton.click();
     }
 
-    public RegistrationPage verifyRegistrationResultsModalAppears() {
+    public RegistrationPageComponent verifyRegistrationResultsModalAppears() {
         resultsModal.verifyModalAppears();
 
         return this;
     }
 
-    public RegistrationPage verifyResult(String key, String value) {
+    public RegistrationPageComponent verifyResult(String key, String value) {
         resultsModal.verifyResult(key, value);
         return this;
 

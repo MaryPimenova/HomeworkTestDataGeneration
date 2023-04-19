@@ -2,12 +2,12 @@ package ru.maruspim.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
-import ru.maruspim.pages.RegistrationPage;
-import ru.maruspim.pages.TextBoxPage;
+import ru.maruspim.pages.RegistrationPageComponent;
+import ru.maruspim.pages.TextBoxPageComponent;
 
 public class TestBase {
-    RegistrationPage registrationPage = new RegistrationPage();
-    TextBoxPage textBoxPage = new TextBoxPage();
+    RegistrationPageComponent registrationPageComponent = new RegistrationPageComponent();
+    TextBoxPageComponent textBoxPageComponent = new TextBoxPageComponent();
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";

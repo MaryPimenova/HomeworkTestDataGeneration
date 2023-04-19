@@ -6,7 +6,7 @@ public class TextBoxTests extends TestBase {
     @Test
     void successfulFillFormTest() {
 
-        textBoxPage.openPage("/text-box")
+        textBoxPageComponent.openPage("/text-box")
                 .footerRemoving()
                 .setFullName("Maria Pimenova")
                 .setUserEmail("kitty@gmail.com")
@@ -14,7 +14,7 @@ public class TextBoxTests extends TestBase {
                 .setPermanentAddress("Kingsroad, Winterfell")
                 .clickSubmit();
 
-        textBoxPage.verifyOutputAppears()
+        textBoxPageComponent.verifyOutputAppears()
                    .verifyResult("Name:","Maria Pimenova")
                    .verifyResult("Email:","kitty@gmail.com")
                    .verifyResult("Current Address :","Baker Street, 221B")

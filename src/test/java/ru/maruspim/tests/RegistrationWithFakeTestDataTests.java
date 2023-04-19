@@ -1,12 +1,12 @@
 package ru.maruspim.tests;
 import org.junit.jupiter.api.Test;
 import static ru.maruspim.utils.RandomUtils.*;
-public class RegistrationWithTestDataTests extends TestBase {
+public class RegistrationWithFakeTestDataTests extends TestBase {
 
     @Test
     void successfulFillFormTest() {
 
-        registrationPage.openPage("/automation-practice-form")
+        registrationPageComponent.openPage("/automation-practice-form")
                 .footerRemoving()
                 .setFirstName(firstName)
                 .setLastName(lastName)
@@ -22,7 +22,7 @@ public class RegistrationWithTestDataTests extends TestBase {
                 .setCity(city)
                 .clickSubmit();
 
-        registrationPage.verifyRegistrationResultsModalAppears()
+        registrationPageComponent.verifyRegistrationResultsModalAppears()
                 .verifyResult("Student Name", firstName + " " + lastName)
                 .verifyResult("Student Email", userEmail)
                 .verifyResult("Gender", gender)
