@@ -4,10 +4,12 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import ru.maruspim.pages.RegistrationPageComponent;
 import ru.maruspim.pages.TextBoxPageComponent;
+import ru.maruspim.utils.RandomUtils;
 
 public class TestBase {
     RegistrationPageComponent registrationPageComponent = new RegistrationPageComponent();
     TextBoxPageComponent textBoxPageComponent = new TextBoxPageComponent();
+    RandomUtils randomUtils = new RandomUtils();
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";

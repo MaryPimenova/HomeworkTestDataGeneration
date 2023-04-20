@@ -6,7 +6,7 @@ public class RegistrationWithFakeTestDataTests extends TestBase {
 
     @Test
     void successfulFillFormTest() {
-        RandomUtils randomUtils = new RandomUtils();
+
         String
                 firstName = randomUtils.createRandomFirstName(),
                 lastName = randomUtils.createRandomLastName(),
